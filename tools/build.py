@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # ── 고칠 곳 ──
 DRAFT = False             # 공개 전 초안 띠 + 검색 제외
 SITE = "https://touchtok.kr"   # 끝 슬래시 없음. 구매 버튼은 SHOP(스마트에버 판매 페이지)으로 간다
-OGV = 2                   # 공유 썸네일·CSS 버전
+OGV = 3                   # 공유 썸네일·CSS 버전
 SHOP = "https://smartever.co.kr/product/detail.html?product_no="
 P12, PLIST, P3 = "406,980", "478,800", "199,000"   # 12개월 판매가, 소비자가, 3개월 판매가 (숫자만)
 # 언어: (코드, html lang, 버튼에 보이는 이름, 폴더). 맨 앞이 기본(한국어). 언어를 빼거나 더하려면 여기와 T 를 같이 고친다.
@@ -241,7 +241,17 @@ img,video{max-width:100%;display:block}a{color:inherit}
 .lang div{position:absolute;right:0;top:calc(100% + 8px);min-width:150px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 12px 30px rgba(43,26,32,.12)}
 .lang a{display:block;padding:9px 12px;border-radius:9px;text-decoration:none;font-size:14px}.lang a[aria-current]{background:var(--bg);font-weight:700;color:var(--berry)}
 .btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;text-align:center}
-section{padding:52px 0;border-top:1px solid var(--line)}.hero{border-top:0;padding:36px 0 44px}
+section{padding:52px 0;border-top:1px solid var(--line)}
+.hero{position:relative;border-top:0;padding:0;color:#fff;background:#1a1016;overflow:hidden}
+.hbg img{position:absolute;left:0;bottom:0;width:100%;height:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%);mask-image:linear-gradient(180deg,transparent 0,#000 24%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,10,20,.92) 0%,rgba(22,10,20,.78) 32%,rgba(22,10,20,.2) 54%,rgba(22,10,20,0) 72%,rgba(22,10,20,.5) 100%)}
+.hero .w{position:relative;z-index:1;min-height:700px;min-height:calc(100svh - 56px);padding-top:28px;padding-bottom:90vw}
+.hero .eyebrow{color:#ffc4d2}.hero .lead{color:rgba(255,255,255,.9);margin-bottom:16px}
+.hero .price{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);margin:0}
+.hero .price b{color:#fff}.hero .price .fine{color:rgba(255,255,255,.85)}
+.hero .btn{display:none;background:#fff;color:var(--berry)}.hero>.w>.fine{display:none;color:rgba(255,255,255,.82)}
+.hcap{position:absolute;right:12px;bottom:80px;z-index:1;font-size:11px;color:rgba(255,255,255,.75)}
+.setfig{max-width:520px;margin:0 0 6px}
 .two{display:grid;gap:28px}
 .eyebrow{color:var(--rose);font-weight:700;font-size:13px}
 h1{font-size:38px;line-height:1.18;letter-spacing:-.03em;margin:10px 0 14px;font-weight:800}
@@ -276,9 +286,13 @@ html:lang(en) body,html:lang(es) body,html:lang(vi) body{font-family:system-ui,-
 html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:33px;letter-spacing:-.02em}
 html:lang(ja) body{font-family:"Hiragino Sans","Yu Gothic UI",Meiryo,"Noto Sans JP","Noto Sans CJK JP",sans-serif;word-break:normal;line-break:strict}
 html:lang(zh) body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif;word-break:normal}
-@media(min-width:800px){.top nav .pc{display:inline}.hero{padding:64px 0 72px}.two{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(min-width:800px){.top nav .pc{display:inline}.hero::after{background:linear-gradient(180deg,rgba(22,10,20,.9) 0%,rgba(22,10,20,.62) 26%,rgba(22,10,20,.12) 44%,rgba(22,10,20,0) 74%,rgba(22,10,20,.45) 100%)}
+.hero .w{min-height:0;padding-top:52px;padding-bottom:38.5vw;text-align:center}
+.hero h1 br{display:none}.hero .lead{max-width:640px;margin:0 auto 20px}
+.hbuy{display:flex;justify-content:center;align-items:center;gap:14px}.hero .price{text-align:left;padding:10px 18px}.hero .btn{display:inline-block}
+.hero>.w>.fine{display:block;position:absolute;left:20px;right:20px;bottom:18px;margin:0}.hcap{bottom:12px}.two{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 h1{font-size:56px}h2{font-size:34px}section{padding:84px 0}.cards{grid-template-columns:repeat(3,1fr)}
-html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:46px}html:lang(ja) h1{font-size:50px}
+html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:40px}html:lang(ja) h1{font-size:50px}
 .card{display:block}.card .ph{width:auto}.sticky{display:none}footer{padding-bottom:48px}.film{max-width:880px}}
 """
 GLOBE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>'
@@ -326,14 +340,13 @@ def page(code, hl, path):
     steps = "".join(f"<li>{s}</li>" for s in t["steps"])
     shop = f' {t["shop_note"]}' if t["shop_note"] else ""
     body = f'''<main>
-<section class="hero"><div class="w two"><div>
+<section class="hero"><picture class="hbg"><source media="(min-width:800px)" srcset="{up}img/hero-wide.webp"><img src="{up}img/hero-tall.webp" alt="{t["alt_set"]}"></picture><span class="hcap">{t["cap_img"]}</span>
+<div class="w">
 <div class="eyebrow">{t["eyebrow"]}</div>
-<h1>{t["h1"]}</h1>
+<h1>{t["h1"].replace("<br>", " <br>")}</h1>
 <p class="lead">{t["lead"]}</p>
-<div class="price"><span class="fine">{t["price_cap"]}</span><b>{v["p12"]}</b><span class="fine">{t["price_sub"]}</span></div>
-<a class="btn" href="{buy}">{t["cta"]}</a>
-<p class="fine" style="margin:12px 0 0">{t["hero_fine"]}{shop}</p></div>
-{fig(up + "img/set.webp", t["alt_set"], "a34", t["cap_img"], lazy="")}</div></section>
+<div class="hbuy"><div class="price"><span class="fine">{t["price_cap"]}</span><b>{v["p12"]}</b><span class="fine">{t["price_sub"]}</span></div><a class="btn" href="{buy}">{t["cta"]}</a></div>
+<p class="fine">{t["hero_fine"]}{shop}</p></div></section>
 <section id="modes"><div class="w two"><div>
 <h2>{t["modes_h2"]}</h2>
 <p class="lead">{t["modes_lead"]}</p>
@@ -346,6 +359,7 @@ def page(code, hl, path):
 <p class="fine">{t["how_fine"]}</p></div></div></section>
 <section><div class="w"><h2>{t["film_h2"]}</h2><div class="film">{vid(up, "film", "v16", t["vid_film"], t["cap_vid"])}</div></div></section>
 <section id="set"><div class="w"><h2>{t["set_h2"]}</h2><p class="lead">{t["set_lead"]}</p>
+<div class="setfig">{fig(up + "img/set.webp", t["alt_set"], "a34", t["cap_img"])}</div>
 <div class="cards">{card(up + "img/device2.webp", t["c_dev"], t["c_dev_p"])}{card(up + "img/mask.webp", "PDRN MASK PRO", t["c_mask_p"])}{card(up + "img/gel.webp", "PDRN BOOSTER SOOTHING GEL", t["c_gel_p"])}</div>
 <p class="fine">{t["set_note"]}</p></div></section>
 <section id="price"><div class="w"><h2>{t["price_h2"]}</h2>
