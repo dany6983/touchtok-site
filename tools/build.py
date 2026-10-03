@@ -4,7 +4,7 @@
 import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # ── 고칠 곳 ──
-DRAFT = True              # 공개 전 초안 띠 + 검색 제외
+DRAFT = False             # 공개 전 초안 띠 + 검색 제외
 SITE = "https://touchtok.kr"   # 끝 슬래시 없음. 구매 버튼은 SHOP(스마트에버 판매 페이지)으로 간다
 OGV = 1                   # 공유 썸네일·CSS 버전
 ASOF = "2026년 10월 3일"   # 가격을 확인한 날
