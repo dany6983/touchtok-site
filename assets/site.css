@@ -6,8 +6,13 @@ img,video{max-width:100%;display:block}a{color:inherit}
 .draft{background:var(--ink);color:#fff;text-align:center;font-size:12px;padding:6px}
 .top{position:sticky;top:0;z-index:5;background:rgba(255,248,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .w{display:flex;align-items:center;height:56px}
-.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;color:var(--berry)}
-.top nav{margin-left:auto;display:flex;gap:18px;font-size:14px}.top nav a{text-decoration:none;color:var(--mut)}.top nav .pc{display:none}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;color:var(--berry);white-space:nowrap}
+.top nav{margin-left:auto;display:flex;gap:18px;font-size:14px}.top nav a{text-decoration:none;color:var(--mut);white-space:nowrap}.top nav .pc{display:none}
+.lang{position:relative;margin:0 0 0 14px;padding:0;border:0;background:none;border-radius:0}
+.lang summary{list-style:none;display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fff;white-space:nowrap}
+.lang summary::-webkit-details-marker{display:none}.lang summary::after{content:"▾";font-size:11px;color:var(--mut)}
+.lang div{position:absolute;right:0;top:calc(100% + 8px);min-width:150px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 12px 30px rgba(43,26,32,.12)}
+.lang a{display:block;padding:9px 12px;border-radius:9px;text-decoration:none;font-size:14px}.lang a[aria-current]{background:var(--bg);font-weight:700;color:var(--berry)}
 .btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;text-align:center}
 section{padding:52px 0;border-top:1px solid var(--line)}.hero{border-top:0;padding:36px 0 44px}
 .two{display:grid;gap:28px}
@@ -35,11 +40,16 @@ ol{padding-left:20px;margin:0 0 14px}ol li{margin:6px 0}
 table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:20px 0}
 th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
 th{width:36%;font-weight:600;color:var(--mut)}tr:last-child th,tr:last-child td{border-bottom:0}td b{color:var(--berry)}
-details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px}
-summary{font-weight:700;cursor:pointer}details p{margin:8px 0 0;color:var(--mut)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px}
+summary{font-weight:700;cursor:pointer}.faq details p{margin:8px 0 0;color:var(--mut)}
 footer{padding:32px 0 104px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}footer p{margin:0 0 6px}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,248,246,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:6}
 .sticky .btn{display:block}
+html:lang(en) body,html:lang(es) body,html:lang(vi) body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:33px;letter-spacing:-.02em}
+html:lang(ja) body{font-family:"Hiragino Sans","Yu Gothic UI",Meiryo,"Noto Sans JP","Noto Sans CJK JP",sans-serif;word-break:normal;line-break:strict}
+html:lang(zh) body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif;word-break:normal}
 @media(min-width:800px){.top nav .pc{display:inline}.hero{padding:64px 0 72px}.two{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-h1{font-size:56px}h2{font-size:34px}section{padding:84px 0}.cards{grid-template-columns:repeat(3,1fr)}.cards.c2{grid-template-columns:repeat(2,1fr);max-width:720px}
+h1{font-size:56px}h2{font-size:34px}section{padding:84px 0}.cards{grid-template-columns:repeat(3,1fr)}
+html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:46px}html:lang(ja) h1{font-size:50px}
 .card{display:block}.card .ph{width:auto}.sticky{display:none}footer{padding-bottom:48px}.film{max-width:880px}}
