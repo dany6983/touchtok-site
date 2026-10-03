@@ -16,7 +16,7 @@ img,video{max-width:100%;display:block}a{color:inherit}
 .btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;text-align:center}
 section{padding:52px 0;border-top:1px solid var(--line)}
 .hero{position:relative;border-top:0;padding:0;color:#fff;background:#1a1016;overflow:hidden}
-.hbg img{position:absolute;left:0;bottom:0;width:100%;height:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%);mask-image:linear-gradient(180deg,transparent 0,#000 24%)}
+.hbg img{position:absolute;left:0;bottom:-22vw;width:100%;height:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%);mask-image:linear-gradient(180deg,transparent 0,#000 24%)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,10,20,.92) 0%,rgba(22,10,20,.78) 32%,rgba(22,10,20,.2) 54%,rgba(22,10,20,0) 72%,rgba(22,10,20,.5) 100%)}
 .hero .w{position:relative;z-index:1;min-height:700px;min-height:calc(100svh - 56px);padding-top:28px;padding-bottom:90vw}
 .hero .eyebrow{color:#ffc4d2}.hero .lead{color:rgba(255,255,255,.9);margin-bottom:16px}
@@ -38,10 +38,13 @@ figure{margin:0}figcaption{font-size:11.5px;color:var(--mut);margin-top:6px}
 .shot{border-radius:20px;overflow:hidden;background:var(--pink)}.shot img,.shot video{width:100%;height:100%;object-fit:cover}
 .a34{aspect-ratio:3/4}.a45{aspect-ratio:4/5}.a45 img{object-position:50% 62%}.a11{aspect-ratio:1/1}.v16{aspect-ratio:16/9}
 .v9{aspect-ratio:9/16;max-width:340px;margin:0 auto}
-.modes{list-style:none;padding:0;margin:20px 0 12px;display:grid;gap:10px}
-.modes li{display:flex;gap:12px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px}
-.modes .en{font-weight:800;font-size:12px;letter-spacing:.06em;color:var(--berry);width:76px;flex:none}
-.modes span{color:var(--mut);font-size:14px}
+.mrow{list-style:none;padding:0 20px 4px;margin:22px -20px 12px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.mrow::-webkit-scrollbar{display:none}
+.mrow li{flex:0 0 64%;max-width:260px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;padding-bottom:14px}
+.mrow .shot{border-radius:0;aspect-ratio:9/16}
+.mrow .en{display:block;font-weight:800;font-size:12px;letter-spacing:.06em;color:var(--berry);margin:12px 14px 0}
+.mrow b{display:block;margin:0 14px;font-size:16px}
+.mrow p{margin:4px 14px 0;color:var(--mut);font-size:13.5px;line-height:1.5}
 ol{padding-left:20px;margin:0 0 14px}ol li{margin:6px 0}
 .cards{display:grid;gap:14px;margin:22px 0 14px}
 .card{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none}
@@ -61,9 +64,10 @@ html:lang(ja) body{font-family:"Hiragino Sans","Yu Gothic UI",Meiryo,"Noto Sans 
 html:lang(zh) body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif;word-break:normal}
 @media(min-width:800px){.top nav .pc{display:inline}.hero::after{background:linear-gradient(180deg,rgba(22,10,20,.9) 0%,rgba(22,10,20,.62) 26%,rgba(22,10,20,.12) 44%,rgba(22,10,20,0) 74%,rgba(22,10,20,.45) 100%)}
 .hero .w{min-height:0;padding-top:52px;padding-bottom:38.5vw;text-align:center}
-.hero h1 br{display:none}.hero .lead{max-width:640px;margin:0 auto 20px}
+.hbg img{bottom:0}.hero h1 br{display:none}.hero .lead{max-width:640px;margin:0 auto 20px}
 .hbuy{display:flex;justify-content:center;align-items:center;gap:14px}.hero .price{text-align:left;padding:10px 18px}.hero .btn{display:inline-block}
 .hero>.w>.fine{display:block;position:absolute;left:20px;right:20px;bottom:18px;margin:0}.hcap{bottom:12px}.two{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 h1{font-size:56px}h2{font-size:34px}section{padding:84px 0}.cards{grid-template-columns:repeat(3,1fr)}
 html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:40px}html:lang(ja) h1{font-size:50px}
+.mrow{margin:28px 0 12px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);overflow:visible}.mrow li{max-width:none}
 .card{display:block}.card .ph{width:auto}.sticky{display:none}footer{padding-bottom:48px}.film{max-width:880px}}

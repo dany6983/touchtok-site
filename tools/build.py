@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # ── 고칠 곳 ──
 DRAFT = False             # 공개 전 초안 띠 + 검색 제외
 SITE = "https://touchtok.kr"   # 끝 슬래시 없음. 구매 버튼은 SHOP(스마트에버 판매 페이지)으로 간다
-OGV = 3                   # 공유 썸네일·CSS 버전
+OGV = 4                   # 공유 썸네일·CSS 버전
 SHOP = "https://smartever.co.kr/product/detail.html?product_no="
 P12, PLIST, P3 = "406,980", "478,800", "199,000"   # 12개월 판매가, 소비자가, 3개월 판매가 (숫자만)
 # 언어: (코드, html lang, 버튼에 보이는 이름, 폴더). 맨 앞이 기본(한국어). 언어를 빼거나 더하려면 여기와 T 를 같이 고친다.
@@ -25,8 +25,8 @@ T["ko"] = dict(
     price_cap="12개월 구독 패키지 · 예약판매 특별가", price_sub="소비자가 {plist} · 스마트에버 공식몰 결제",
     cta="구독 패키지 보기", hero_fine="1년 무상 A/S · 5만원 이상 무료배송 · 무료 체험은 지금은 없습니다.", shop_note="",
     alt_set="터치톡 디바이스, PDRN MASK PRO, PDRN BOOSTER SOOTHING GEL", cap_img="연출 이미지", cap_vid="연출 영상",
-    modes_h2="버튼 하나로 바꾸는<br>5가지 모드", modes_lead="MODE 버튼으로 모드를, LEVEL 버튼으로 5단계 강도를 고릅니다.",
-    modes=[("클렌징", "하루를 닦아내는 첫 단계"), ("마스크", "마스크팩 위에서 쓰는 모드"), ("리프팅", "탄력 케어 모드"), ("아이케어", "눈가에 쓰는 모드"), ("쿨링", "차갑게 마무리하는 모드")],
+    modes_h2="버튼 하나로 바꾸는<br>5가지 모드", modes_lead="전원 버튼을 길게 눌러 켜고, MODE 버튼으로 모드를, LEVEL 버튼으로 5단계 강도를 고릅니다.",
+    modes=[("클렌징", "세안 후 물기를 닦고 사용합니다. 온열과 양이온을 쓰는 모드."), ("마스크", "마스크팩을 붙인 위에서 사용합니다. 음이온과 EMS를 쓰는 모드."), ("리프팅", "RF·EMS와 레드·그린 라이트를 함께 쓰는 모드. 주 2~3회 사용을 권장합니다."), ("아이케어", "눈가에 맞춰 RF·EMS 강도를 조절한 모드."), ("쿨링", "냉각과 블루 라이트로 마무리하는 모드.")],
     modes_note="모드 이름은 기기에 적힌 표기 그대로입니다.", alt_device="터치톡 디바이스 정면",
     vid_use="마스크팩 위에서 터치톡을 쓰는 모습", how_h2="마스크 위에<br>터치톡",
     how_lead="PDRN MASK PRO를 붙이고, 그 위에서 터치톡을 천천히 움직입니다.",
@@ -59,8 +59,8 @@ T["en"] = dict(
     cta="See the package", hero_fine="1-year free after-sales service · Free shipping over ₩50,000 · No free trial at this time.",
     shop_note="The official store is in Korean and lists shipping within Korea.",
     alt_set="Touch Tok device, PDRN MASK PRO, PDRN BOOSTER SOOTHING GEL", cap_img="Staged image", cap_vid="Staged video (captions in Korean)",
-    modes_h2="Five modes,<br>one button", modes_lead="Pick a mode with the MODE button and one of five intensity levels with the LEVEL button.",
-    modes=[("Cleansing", "The first step to wind down the day"), ("Mask", "For use over a sheet mask"), ("Lifting", "Firmness-care mode"), ("Eye care", "For the eye area"), ("Cooling", "A cool finish")],
+    modes_h2="Five modes,<br>one button", modes_lead="Press and hold the power button to turn it on, pick a mode with the MODE button, then one of five intensity levels with the LEVEL button.",
+    modes=[("Cleansing", "Use on clean, dry skin after washing. Uses warmth and positive ions."), ("Mask", "Use over a sheet mask. Uses negative ions and EMS."), ("Lifting", "Combines RF, EMS and red and green light. Recommended 2–3 times a week."), ("Eye care", "RF and EMS levels adjusted for the eye area."), ("Cooling", "Cooling and blue light to finish.")],
     modes_note="Mode names are shown exactly as printed on the device.", alt_device="Front of the Touch Tok device",
     vid_use="Using Touch Tok over a sheet mask", how_h2="Touch Tok,<br>over your mask",
     how_lead="Apply PDRN MASK PRO, then glide Touch Tok slowly over it.",
@@ -94,8 +94,8 @@ T["ja"] = dict(
     cta="パッケージを見る", hero_fine="1年間無償アフターサービス · ₩50,000以上で送料無料 · 無料体験は現在ありません。",
     shop_note="公式ストアは韓国語のサイトで、配送は韓国国内と表示されています。",
     alt_set="Touch Tok デバイス、PDRN MASK PRO、PDRN BOOSTER SOOTHING GEL", cap_img="イメージ画像", cap_vid="イメージ動画（字幕は韓国語）",
-    modes_h2="ボタンひとつで切り替える<br>5つのモード", modes_lead="MODEボタンでモードを、LEVELボタンで5段階の強さを選びます。",
-    modes=[("クレンジング", "一日を洗い流す最初のステップ"), ("マスク", "シートマスクの上から使うモード"), ("リフティング", "ハリケアモード"), ("アイケア", "目元に使うモード"), ("クーリング", "ひんやり仕上げるモード")],
+    modes_h2="ボタンひとつで切り替える<br>5つのモード", modes_lead="電源ボタンを長押しして電源を入れ、MODEボタンでモードを、LEVELボタンで5段階の強さを選びます。",
+    modes=[("クレンジング", "洗顔後、水気を拭き取ってから使います。温熱とプラスイオンを使うモード。"), ("マスク", "シートマスクの上から使います。マイナスイオンとEMSを使うモード。"), ("リフティング", "RF・EMSとレッド・グリーンライトを組み合わせたモード。週2〜3回の使用がおすすめです。"), ("アイケア", "目元に合わせてRF・EMSの強さを調整したモード。"), ("クーリング", "冷却とブルーライトで仕上げるモード。")],
     modes_note="モード名はデバイスに記載された表記のままです。", alt_device="Touch Tok デバイス正面",
     vid_use="シートマスクの上からTouch Tokを使う様子", how_h2="マスクの上から<br>Touch Tok",
     how_lead="PDRN MASK PROを貼り、その上でTouch Tokをゆっくり動かします。",
@@ -129,8 +129,8 @@ T["zh"] = dict(
     cta="查看订阅套装", hero_fine="1 年免费售后 · 满 ₩50,000 免运费 · 目前没有免费试用。",
     shop_note="官方商城为韩语网站，目前显示为韩国境内配送。",
     alt_set="Touch Tok 美容仪、PDRN MASK PRO、PDRN BOOSTER SOOTHING GEL", cap_img="示意图", cap_vid="示意视频（韩语字幕）",
-    modes_h2="一键切换<br>5 种模式", modes_lead="用 MODE 键选择模式，用 LEVEL 键选择 5 档强度。",
-    modes=[("清洁", "卸下一天的第一步"), ("面膜", "敷着面膜使用的模式"), ("提拉", "弹力护理模式"), ("眼部护理", "用于眼周的模式"), ("冷却", "清凉收尾的模式")],
+    modes_h2="一键切换<br>5 种模式", modes_lead="长按电源键开机，用 MODE 键选择模式，用 LEVEL 键选择 5 档强度。",
+    modes=[("清洁", "洁面后擦干水分再使用。使用温热与正离子的模式。"), ("面膜", "敷着面膜使用。使用负离子与 EMS 的模式。"), ("提拉", "结合 RF、EMS 与红光、绿光的模式。建议每周使用 2～3 次。"), ("眼部护理", "针对眼周调整 RF 与 EMS 强度的模式。"), ("冷却", "用冷却与蓝光收尾的模式。")],
     modes_note="模式名称与仪器上的标注一致。", alt_device="Touch Tok 美容仪正面",
     vid_use="在面膜上使用 Touch Tok", how_h2="敷上面膜<br>再用 Touch Tok",
     how_lead="敷上 PDRN MASK PRO，再用 Touch Tok 在面膜上缓慢移动。",
@@ -164,8 +164,8 @@ T["es"] = dict(
     cta="Ver el paquete", hero_fine="1 año de servicio posventa gratuito · Envío gratis desde ₩50,000 · Por ahora no hay prueba gratuita.",
     shop_note="La tienda oficial está en coreano e indica envío dentro de Corea.",
     alt_set="Dispositivo Touch Tok, PDRN MASK PRO, PDRN BOOSTER SOOTHING GEL", cap_img="Imagen de muestra", cap_vid="Video de muestra (subtítulos en coreano)",
-    modes_h2="Cinco modos,<br>un solo botón", modes_lead="Elige el modo con el botón MODE y uno de los cinco niveles de intensidad con el botón LEVEL.",
-    modes=[("Limpieza", "El primer paso para cerrar el día"), ("Mascarilla", "Para usar sobre la mascarilla"), ("Lifting", "Modo de cuidado de la firmeza"), ("Contorno de ojos", "Para la zona de los ojos"), ("Frío", "Un final refrescante")],
+    modes_h2="Cinco modos,<br>un solo botón", modes_lead="Mantén pulsado el botón de encendido, elige el modo con el botón MODE y uno de los cinco niveles de intensidad con el botón LEVEL.",
+    modes=[("Limpieza", "Úsalo con la piel limpia y seca tras lavar el rostro. Usa calor e iones positivos."), ("Mascarilla", "Úsalo sobre la mascarilla. Usa iones negativos y EMS."), ("Lifting", "Combina RF, EMS y luz roja y verde. Se recomienda 2–3 veces por semana."), ("Contorno de ojos", "RF y EMS ajustados para la zona de los ojos."), ("Frío", "Frío y luz azul para terminar.")],
     modes_note="Los nombres de los modos aparecen tal como están impresos en el dispositivo.", alt_device="Parte frontal del dispositivo Touch Tok",
     vid_use="Uso de Touch Tok sobre la mascarilla", how_h2="Touch Tok,<br>sobre la mascarilla",
     how_lead="Aplica PDRN MASK PRO y desliza Touch Tok lentamente sobre ella.",
@@ -199,8 +199,8 @@ T["vi"] = dict(
     cta="Xem gói đăng ký", hero_fine="Bảo hành miễn phí 1 năm · Miễn phí vận chuyển từ ₩50,000 · Hiện chưa có dùng thử miễn phí.",
     shop_note="Cửa hàng chính thức dùng tiếng Hàn và hiện ghi là giao hàng trong Hàn Quốc.",
     alt_set="Thiết bị Touch Tok, PDRN MASK PRO, PDRN BOOSTER SOOTHING GEL", cap_img="Hình minh họa", cap_vid="Video minh họa (phụ đề tiếng Hàn)",
-    modes_h2="Năm chế độ,<br>một nút bấm", modes_lead="Chọn chế độ bằng nút MODE và chọn một trong năm mức cường độ bằng nút LEVEL.",
-    modes=[("Làm sạch", "Bước đầu tiên để khép lại một ngày"), ("Mặt nạ", "Dùng trên mặt nạ giấy"), ("Nâng cơ", "Chế độ chăm sóc độ săn chắc"), ("Chăm sóc mắt", "Dùng cho vùng quanh mắt"), ("Làm mát", "Kết thúc mát lạnh")],
+    modes_h2="Năm chế độ,<br>một nút bấm", modes_lead="Nhấn giữ nút nguồn để bật máy, chọn chế độ bằng nút MODE và một trong năm mức cường độ bằng nút LEVEL.",
+    modes=[("Làm sạch", "Dùng sau khi rửa mặt và lau khô. Chế độ dùng nhiệt ấm và ion dương."), ("Mặt nạ", "Dùng trên mặt nạ giấy. Chế độ dùng ion âm và EMS."), ("Nâng cơ", "Kết hợp RF, EMS với ánh sáng đỏ và xanh lá. Khuyên dùng 2–3 lần mỗi tuần."), ("Chăm sóc mắt", "RF và EMS được điều chỉnh cho vùng quanh mắt."), ("Làm mát", "Làm mát và ánh sáng xanh dương để kết thúc.")],
     modes_note="Tên chế độ được ghi đúng như in trên thiết bị.", alt_device="Mặt trước của thiết bị Touch Tok",
     vid_use="Dùng Touch Tok trên mặt nạ giấy", how_h2="Touch Tok<br>trên mặt nạ",
     how_lead="Đắp PDRN MASK PRO rồi di chuyển Touch Tok chậm rãi trên mặt nạ.",
@@ -243,7 +243,7 @@ img,video{max-width:100%;display:block}a{color:inherit}
 .btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;text-align:center}
 section{padding:52px 0;border-top:1px solid var(--line)}
 .hero{position:relative;border-top:0;padding:0;color:#fff;background:#1a1016;overflow:hidden}
-.hbg img{position:absolute;left:0;bottom:0;width:100%;height:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%);mask-image:linear-gradient(180deg,transparent 0,#000 24%)}
+.hbg img{position:absolute;left:0;bottom:-22vw;width:100%;height:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%);mask-image:linear-gradient(180deg,transparent 0,#000 24%)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,10,20,.92) 0%,rgba(22,10,20,.78) 32%,rgba(22,10,20,.2) 54%,rgba(22,10,20,0) 72%,rgba(22,10,20,.5) 100%)}
 .hero .w{position:relative;z-index:1;min-height:700px;min-height:calc(100svh - 56px);padding-top:28px;padding-bottom:90vw}
 .hero .eyebrow{color:#ffc4d2}.hero .lead{color:rgba(255,255,255,.9);margin-bottom:16px}
@@ -265,10 +265,13 @@ figure{margin:0}figcaption{font-size:11.5px;color:var(--mut);margin-top:6px}
 .shot{border-radius:20px;overflow:hidden;background:var(--pink)}.shot img,.shot video{width:100%;height:100%;object-fit:cover}
 .a34{aspect-ratio:3/4}.a45{aspect-ratio:4/5}.a45 img{object-position:50% 62%}.a11{aspect-ratio:1/1}.v16{aspect-ratio:16/9}
 .v9{aspect-ratio:9/16;max-width:340px;margin:0 auto}
-.modes{list-style:none;padding:0;margin:20px 0 12px;display:grid;gap:10px}
-.modes li{display:flex;gap:12px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px}
-.modes .en{font-weight:800;font-size:12px;letter-spacing:.06em;color:var(--berry);width:76px;flex:none}
-.modes span{color:var(--mut);font-size:14px}
+.mrow{list-style:none;padding:0 20px 4px;margin:22px -20px 12px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.mrow::-webkit-scrollbar{display:none}
+.mrow li{flex:0 0 64%;max-width:260px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;padding-bottom:14px}
+.mrow .shot{border-radius:0;aspect-ratio:9/16}
+.mrow .en{display:block;font-weight:800;font-size:12px;letter-spacing:.06em;color:var(--berry);margin:12px 14px 0}
+.mrow b{display:block;margin:0 14px;font-size:16px}
+.mrow p{margin:4px 14px 0;color:var(--mut);font-size:13.5px;line-height:1.5}
 ol{padding-left:20px;margin:0 0 14px}ol li{margin:6px 0}
 .cards{display:grid;gap:14px;margin:22px 0 14px}
 .card{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none}
@@ -288,11 +291,12 @@ html:lang(ja) body{font-family:"Hiragino Sans","Yu Gothic UI",Meiryo,"Noto Sans 
 html:lang(zh) body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif;word-break:normal}
 @media(min-width:800px){.top nav .pc{display:inline}.hero::after{background:linear-gradient(180deg,rgba(22,10,20,.9) 0%,rgba(22,10,20,.62) 26%,rgba(22,10,20,.12) 44%,rgba(22,10,20,0) 74%,rgba(22,10,20,.45) 100%)}
 .hero .w{min-height:0;padding-top:52px;padding-bottom:38.5vw;text-align:center}
-.hero h1 br{display:none}.hero .lead{max-width:640px;margin:0 auto 20px}
+.hbg img{bottom:0}.hero h1 br{display:none}.hero .lead{max-width:640px;margin:0 auto 20px}
 .hbuy{display:flex;justify-content:center;align-items:center;gap:14px}.hero .price{text-align:left;padding:10px 18px}.hero .btn{display:inline-block}
 .hero>.w>.fine{display:block;position:absolute;left:20px;right:20px;bottom:18px;margin:0}.hcap{bottom:12px}.two{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 h1{font-size:56px}h2{font-size:34px}section{padding:84px 0}.cards{grid-template-columns:repeat(3,1fr)}
 html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:40px}html:lang(ja) h1{font-size:50px}
+.mrow{margin:28px 0 12px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);overflow:visible}.mrow li{max-width:none}
 .card{display:block}.card .ph{width:auto}.sticky{display:none}footer{padding-bottom:48px}.film{max-width:880px}}
 """
 GLOBE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>'
@@ -335,7 +339,7 @@ def page(code, hl, path):
     t, v = text(code)
     up = "../" if path else ""
     buy = SHOP + "33"
-    modes = "".join(f'<li><span class="en">{e}</span><div><b>{k}</b> <span>{d}</span></div></li>' for e, (k, d) in zip(MODE_EN, t["modes"]))
+    modes = "".join(f'<li><div class="shot"><video data-auto src="{up}img/mode-{e.lower().replace(" ", "")}.mp4" poster="{up}img/mode-{e.lower().replace(" ", "")}.jpg" aria-label="{e} · {k}" muted loop playsinline preload="none"></video></div><span class="en">{e}</span><b>{k}</b><p>{d}</p></li>' for e, (k, d) in zip(MODE_EN, t["modes"]))
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in t["faq"])
     steps = "".join(f"<li>{s}</li>" for s in t["steps"])
     shop = f' {t["shop_note"]}' if t["shop_note"] else ""
@@ -347,11 +351,10 @@ def page(code, hl, path):
 <p class="lead">{t["lead"]}</p>
 <div class="hbuy"><div class="price"><span class="fine">{t["price_cap"]}</span><b>{v["p12"]}</b><span class="fine">{t["price_sub"]}</span></div><a class="btn" href="{buy}">{t["cta"]}</a></div>
 <p class="fine">{t["hero_fine"]}{shop}</p></div></section>
-<section id="modes"><div class="w two"><div>
+<section id="modes"><div class="w">
 <h2>{t["modes_h2"]}</h2>
 <p class="lead">{t["modes_lead"]}</p>
-<ul class="modes">{modes}</ul><p class="fine">{t["modes_note"]}</p></div>
-{fig(up + "img/device.webp", t["alt_device"], "a45", t["cap_img"])}</div></section>
+<ul class="mrow">{modes}</ul><p class="fine">{t["cap_vid"].replace("（","(").split("(")[0].strip()} · {t["modes_note"]}</p></div></section>
 <section id="how"><div class="w two">{vid(up, "use", "v9", t["vid_use"], t["cap_vid"])}<div>
 <h2>{t["how_h2"]}</h2>
 <p class="lead">{t["how_lead"]}</p>
@@ -374,7 +377,8 @@ def page(code, hl, path):
 <section class="faq"><div class="w"><h2>{t["faq_h2"]}</h2>{faq}</div></section>
 </main>
 <footer><div class="w"><p>{t["seller"]}</p><p>{t["note"]}</p><p>{t["asof"]}</p></div></footer>
-<div class="sticky"><a class="btn" href="{buy}">{t["sticky"]}</a></div></body></html>'''
+<div class="sticky"><a class="btn" href="{buy}">{t["sticky"]}</a></div>
+<script>(function(){{var v=[].slice.call(document.querySelectorAll("video[data-auto]"));if(!("IntersectionObserver" in window)){{v.forEach(function(x){{x.controls=true}});return}}var o=new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isIntersecting){{var p=e.target.play();if(p&&p.catch)p.catch(function(){{}})}}else e.target.pause()}})}},{{threshold:.5}});v.forEach(function(x){{o.observe(x)}})}})()</script></body></html>'''
     write(path + "index.html", head(code, hl, path, t, up) + body)
 def og():
     write("assets/og.html", '''<!doctype html><html lang="ko"><meta charset="utf-8"><body style="margin:0;width:1200px;height:630px;display:flex;background:#fff8f6;font-family:Pretendard,'Noto Sans KR',sans-serif;color:#2b1a20;word-break:keep-all">
