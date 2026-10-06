@@ -4,6 +4,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Pretendard,"A
 img,video{max-width:100%;display:block}a{color:inherit}
 .w{max-width:1080px;margin:0 auto;padding:0 20px}
 .draft{background:var(--ink);color:#fff;text-align:center;font-size:12px;padding:6px}
+.legal{margin:0;background:#fff;color:var(--ink);border-bottom:1px solid var(--line);text-align:center;font-size:12.5px;line-height:1.5;padding:8px 20px}
 .top{position:sticky;top:0;z-index:5;background:rgba(255,248,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .w{display:flex;align-items:center;height:56px}
 .logo{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;color:var(--berry);white-space:nowrap}

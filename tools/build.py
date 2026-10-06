@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # ── 고칠 곳 ──
 DRAFT = False             # 공개 전 초안 띠 + 검색 제외
 SITE = "https://touchtok.kr"   # 끝 슬래시 없음. 구매 버튼은 SHOP(스마트에버 판매 페이지)으로 간다
-OGV = 4                   # 공유 썸네일·CSS 버전
+OGV = 5                   # 공유 썸네일·CSS 버전
 SHOP = "https://smartever.co.kr/product/detail.html?product_no="
 P12, PLIST, P3 = "406,980", "478,800", "199,000"   # 12개월 판매가, 소비자가, 3개월 판매가 (숫자만)
 # 언어: (코드, html lang, 버튼에 보이는 이름, 폴더). 맨 앞이 기본(한국어). 언어를 빼거나 더하려면 여기와 T 를 같이 고친다.
@@ -17,6 +17,7 @@ LANGS = [("ko", "ko", "한국어", ""), ("en", "en", "English", "en/"), ("ja", "
 SELLER_ID = "(주)피디케이이엔티"
 T = {}
 T["ko"] = dict(
+    legal="[안내] 본 제품은 질병의 예방 및 치료를 위한 의료기기가 아니며, 일상적인 피부 미용 관리를 지원하는 일반 피부 미용기기(공산품)입니다.",
     title="터치톡 | 기기 하나로 다섯 가지 홈케어",
     desc="터치톡 뷰티 디바이스와 PDRN 마스크팩·부스터 수딩 겔을 함께 받는 12개월 구독 패키지.",
     nav_modes="5가지 모드", nav_set="구성", nav_price="가격",
@@ -26,7 +27,7 @@ T["ko"] = dict(
     cta="구독 패키지 보기", hero_fine="1년 무상 A/S · 5만원 이상 무료배송 · 무료 체험은 지금은 없습니다.", shop_note="",
     alt_set="터치톡 디바이스, PDRN MASK PRO, PDRN BOOSTER SOOTHING GEL", cap_img="연출 이미지", cap_vid="연출 영상",
     modes_h2="버튼 하나로 바꾸는<br>5가지 모드", modes_lead="전원 버튼을 길게 눌러 켜고, MODE 버튼으로 모드를, LEVEL 버튼으로 5단계 강도를 고릅니다.",
-    modes=[("클렌징", "세안 후 물기를 닦고 사용합니다. 온열과 양이온을 쓰는 모드."), ("마스크", "마스크팩을 붙인 위에서 사용합니다. 음이온과 EMS를 쓰는 모드."), ("리프팅", "RF·EMS와 레드·그린 라이트를 함께 쓰는 모드. 주 2~3회 사용을 권장합니다."), ("아이케어", "눈가에 맞춰 RF·EMS 강도를 조절한 모드."), ("쿨링", "냉각과 블루 라이트로 마무리하는 모드.")],
+    modes=[("클렌징", "세안 후 물기를 닦고 사용합니다. 온열과 양이온을 쓰는 모드."), ("마스크", "마스크팩을 붙인 위에서 사용합니다. 음이온과 EMS를 쓰는 모드."), ("탄력 관리", "RF·EMS와 레드·그린 라이트를 함께 쓰는 모드. 주 2~3회 사용을 권장합니다."), ("아이케어", "눈가에 맞춰 RF·EMS 강도를 조절한 모드."), ("쿨링", "냉각과 블루 라이트로 마무리하는 모드.")],
     modes_note="모드 이름은 기기에 적힌 표기 그대로입니다.", alt_device="터치톡 디바이스 정면",
     vid_use="마스크팩 위에서 터치톡을 쓰는 모습", how_h2="마스크 위에<br>터치톡",
     how_lead="PDRN MASK PRO를 붙이고, 그 위에서 터치톡을 천천히 움직입니다.",
@@ -50,6 +51,7 @@ T["ko"] = dict(
     note="이 페이지의 사진·영상은 AI로 만든 연출 이미지입니다. 실제 제품과 세부 표기가 다를 수 있습니다.",
     asof="표시 가격은 2026년 10월 3일 스마트에버 공식몰 기준이며 바뀔 수 있습니다.", sticky="구독 패키지 보기 · {p12}")
 T["en"] = dict(
+    legal="[Notice] This product is not a medical device for the prevention or treatment of disease. It is a general skin beauty device (consumer product) that supports everyday skin beauty care.",
     title="Touch Tok | One device, five home-care modes",
     desc="A 12-month subscription package: the Touch Tok beauty device with PDRN sheet masks and booster soothing gel.",
     nav_modes="5 modes", nav_set="What's inside", nav_price="Price",
@@ -85,6 +87,7 @@ T["en"] = dict(
     note="Photos and videos on this page are staged images created with AI. Details may differ from the actual product.",
     asof="Prices are as listed on the Smartever official store on October 3, 2026 and may change.", sticky="See the package · {p12}")
 T["ja"] = dict(
+    legal="【ご案内】本製品は疾病の予防および治療を目的とした医療機器ではなく、日常的な肌の美容ケアをサポートする一般の美容機器（工業製品）です。",
     title="Touch Tok｜1台で5つのホームケア",
     desc="Touch Tok美容デバイスとPDRNシートマスク、ブースタースージングジェルがセットになった12か月サブスクリプションパッケージ。",
     nav_modes="5つのモード", nav_set="セット内容", nav_price="価格",
@@ -120,6 +123,7 @@ T["ja"] = dict(
     note="このページの写真・動画はAIで作成したイメージです。実際の製品と細部の表記が異なる場合があります。",
     asof="表示価格は2026年10月3日時点のSmartever公式ストアの価格で、変更される場合があります。", sticky="パッケージを見る · {p12}")
 T["zh"] = dict(
+    legal="【提示】本产品并非用于预防或治疗疾病的医疗器械，而是辅助日常皮肤美容护理的普通皮肤美容仪（一般工业产品）。",
     title="Touch Tok｜一台仪器，五种居家护理",
     desc="Touch Tok 美容仪搭配 PDRN 面膜与舒缓凝胶的 12 个月订阅套装。",
     nav_modes="5 种模式", nav_set="套装内容", nav_price="价格",
@@ -155,6 +159,7 @@ T["zh"] = dict(
     note="本页图片和视频为 AI 制作的示意图，细节标注可能与实物不同。",
     asof="所示价格为 2026 年 10 月 3 日 Smartever 官方商城的价格，可能变动。", sticky="查看订阅套装 · {p12}")
 T["es"] = dict(
+    legal="[Aviso] Este producto no es un dispositivo médico para la prevención ni el tratamiento de enfermedades; es un aparato de belleza para la piel de uso general (producto de consumo) que ayuda al cuidado estético diario de la piel.",
     title="Touch Tok | Un dispositivo, cinco modos de cuidado en casa",
     desc="Paquete de suscripción de 12 meses: el dispositivo de belleza Touch Tok con mascarillas PDRN y gel calmante booster.",
     nav_modes="5 modos", nav_set="Qué incluye", nav_price="Precio",
@@ -190,6 +195,7 @@ T["es"] = dict(
     note="Las fotos y los videos de esta página son imágenes de muestra creadas con IA. Los detalles pueden diferir del producto real.",
     asof="Los precios corresponden a la tienda oficial Smartever al 3 de octubre de 2026 y pueden cambiar.", sticky="Ver el paquete · {p12}")
 T["vi"] = dict(
+    legal="[Thông báo] Sản phẩm này không phải là thiết bị y tế dùng để phòng ngừa hay điều trị bệnh, mà là thiết bị làm đẹp da thông thường (hàng tiêu dùng) hỗ trợ chăm sóc thẩm mỹ da hằng ngày.",
     title="Touch Tok | Một thiết bị, năm chế độ chăm sóc tại nhà",
     desc="Gói đăng ký 12 tháng: thiết bị làm đẹp Touch Tok kèm mặt nạ PDRN và gel làm dịu booster.",
     nav_modes="5 chế độ", nav_set="Gói gồm gì", nav_price="Giá",
@@ -231,6 +237,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Pretendard,"A
 img,video{max-width:100%;display:block}a{color:inherit}
 .w{max-width:1080px;margin:0 auto;padding:0 20px}
 .draft{background:var(--ink);color:#fff;text-align:center;font-size:12px;padding:6px}
+.legal{margin:0;background:#fff;color:var(--ink);border-bottom:1px solid var(--line);text-align:center;font-size:12.5px;line-height:1.5;padding:8px 20px}
 .top{position:sticky;top:0;z-index:5;background:rgba(255,248,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .w{display:flex;align-items:center;height:56px}
 .logo{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;color:var(--berry);white-space:nowrap}
@@ -325,7 +332,7 @@ def head(code, hl, path, t, up):
 <html lang="{hl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{t["title"]}</title><meta name="description" content="{t["desc"]}">{robots}{canon}
 <meta property="og:type" content="website"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:image" content="{og}">
-<link rel="stylesheet" href="{up}assets/site.css?v={OGV}"></head><body>{draft}
+<link rel="stylesheet" href="{up}assets/site.css?v={OGV}"></head><body>{draft}<p class="legal">{t["legal"]}</p>
 <header class="top"><div class="w"><a class="logo" href="./">Touch Tok</a><nav><a class="pc" href="#modes">{t["nav_modes"]}</a><a class="pc" href="#set">{t["nav_set"]}</a><a href="#price">{t["nav_price"]}</a></nav>
 <details class="lang"><summary aria-label="Language">{GLOBE}{cur}</summary><div>{links}</div></details></div></header>
 '''
