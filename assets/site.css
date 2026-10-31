@@ -72,3 +72,25 @@ h1{font-size:56px}h2{font-size:34px}section{padding:84px 0}.cards{grid-template-
 html:lang(en) h1,html:lang(es) h1,html:lang(vi) h1{font-size:40px}html:lang(ja) h1{font-size:50px}
 .mrow{margin:28px 0 12px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);overflow:visible}.mrow li{max-width:none}
 .card{display:block}.card .ph{width:auto}.sticky{display:none}footer{padding-bottom:48px}.film{max-width:880px}}
+
+/* skincare */
+#skincare .eyebrow{display:block;font-weight:800;font-size:12px;letter-spacing:.08em;color:var(--berry);margin:0 0 8px}
+#skincare .sk{display:grid;gap:22px;margin:26px 0 8px;align-items:start}
+#skincare .sk figure{margin:0;max-width:420px}
+#skincare .skt h3{font-size:20px;line-height:1.3;margin:0 0 10px}
+#skincare .skt p{color:var(--mut);margin:0 0 12px}
+#skincare .chips{list-style:none;padding:0;margin:0 0 14px;display:flex;flex-wrap:wrap;gap:6px}
+#skincare .chips li{font-size:12.5px;padding:5px 10px;border-radius:999px;background:var(--pink);color:var(--berry);font-weight:600}
+#skincare .kv{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:8px}
+#skincare .kv li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;color:var(--mut);line-height:1.5}
+#skincare .kv b{display:block;color:inherit;color:#222;margin-bottom:2px}
+#skincare ol li{margin:0 0 6px;line-height:1.55}
+#skincare .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 0}
+#skincare .nums span{display:block;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 4px;font-size:11.5px;color:var(--mut)}
+#skincare .nums b{display:block;font-size:18px;color:var(--berry)}
+#skincare .func{background:#fff;border:1px solid var(--line);border-left:4px solid var(--berry);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+#skincare .func b{display:block;margin-bottom:4px}
+#skincare .func p{margin:0;font-size:13px;color:var(--mut)}
+#skincare .routine{display:grid;gap:18px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+#skincare .routine figure{margin:0;max-width:320px}
+@media(min-width:800px){#skincare .sk{grid-template-columns:5fr 7fr;gap:36px}#skincare .sk.rev figure{order:2}#skincare .routine{grid-template-columns:4fr 8fr;align-items:center}}
