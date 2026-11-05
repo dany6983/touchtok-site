@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /detail/source.html
+Disallow: /detail/source-bw.html
+Disallow: /assets/og.html
+Disallow: /tools/
+
+Sitemap: https://touchtok.kr/sitemap.xml
