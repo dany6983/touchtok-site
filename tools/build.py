@@ -400,6 +400,11 @@ if __name__ == "__main__":
     lost = [f for f, m in HAND if os.path.exists(os.path.join(ROOT, f)) and m in open(os.path.join(ROOT, f), encoding="utf-8").read()]
     if lost and "--force" not in sys.argv:
         sys.exit("멈춤: " + ", ".join(lost) + " 에 생성기에 없는 손 고침이 있어 덮어쓰면 사라진다. 생성기(T·page·CSS)에 먼저 옮긴 뒤 --force")
+    # 언어판 목록 LANGS 는 손으로 적은 배열이다. 디스크를 걸어 찾아, 목록 밖 언어판이 있으면 멈춘다(대조 밖으로 빠지는 것 방지).
+    known = {path.rstrip("/") for _, _, _, path in LANGS}
+    stray = sorted(d for d in os.listdir(ROOT) if os.path.isfile(os.path.join(ROOT, d, "index.html")) and d not in known)
+    if stray:
+        sys.exit("멈춤: LANGS 에 없는 언어판 폴더 " + ", ".join(stray) + " — LANGS·T 에 먼저 넣을 것")
     write("assets/site.css", CSS); og()
     for code, hl, _, path in LANGS: page(code, hl, path)
     if SITE: write("CNAME", SITE.split("//")[1] + "\n")
