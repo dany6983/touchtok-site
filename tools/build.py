@@ -393,7 +393,13 @@ def og():
 <div style="font-size:74px;font-weight:800;line-height:1.16;letter-spacing:-3px;margin-top:64px">기기 하나로<br>다섯 가지 홈케어</div>
 <div style="font-size:30px;color:#7b6068;margin-top:34px">디바이스 + PDRN 마스크팩 · 수딩 겔<br>12개월 구독 패키지</div></div>
 <div style="width:470px;height:630px;position:relative"><img src="../img/set.webp" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;right:14px;bottom:10px;font-size:17px;color:#fff">연출 이미지</div></div></body></html>''')
+# 손으로만 들어간 부분(2026-10-31 #skincare 섹션·FAQ 2개·site.css v6). 생성기에 옮기기 전에 돌리면 사라진다 → 막는다.
+HAND = [("index.html", 'id="skincare"'), ("assets/site.css", "/* skincare */")]
 if __name__ == "__main__":
+    import sys
+    lost = [f for f, m in HAND if os.path.exists(os.path.join(ROOT, f)) and m in open(os.path.join(ROOT, f), encoding="utf-8").read()]
+    if lost and "--force" not in sys.argv:
+        sys.exit("멈춤: " + ", ".join(lost) + " 에 생성기에 없는 손 고침이 있어 덮어쓰면 사라진다. 생성기(T·page·CSS)에 먼저 옮긴 뒤 --force")
     write("assets/site.css", CSS); og()
     for code, hl, _, path in LANGS: page(code, hl, path)
     if SITE: write("CNAME", SITE.split("//")[1] + "\n")
